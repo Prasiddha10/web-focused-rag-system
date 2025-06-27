@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production-Ready Web-Focused RAG System</title>
+<script defer src="bundle.js"></script></head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌐 Web-Focused RAG System</h1>
+            <p>Extract content from websites and get intelligent answers powered by Gemini AI</p>
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <h2>📡 Website Crawler</h2>
+                <div class="url-input-section">
+                    <input type="url" id="urlInput" class="url-input" placeholder="Enter website URL (e.g., https://example.com)" aria-label="Enter website URL" />
+                    <button onclick="addUrl()" class="btn btn-primary">Add URL</button>
+                    <ul id="urlList" class="url-list"></ul>
+                    <div style="margin-top: 20px;">
+                        <button onclick="crawlWebsites()" class="btn btn-primary" id="crawlBtn">🚀 Crawl Websites</button>
+                        <button onclick="clearUrls()" class="btn btn-secondary">Clear All URLs</button>
+                    </div>
+                    <div id="crawlProgress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+                    <div id="crawlStatus"></div>
+                    <canvas id="statsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🧠 Knowledge Base</h2>
+                <div class="knowledge-base">
+                    <div id="knowledgeBase">
+                        <p style="text-align: center; color: #666; font-style: italic;">
+                            No content crawled yet. Add URLs above and click "Crawl Websites".
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>❓ Ask Questions</h2>
+                <div class="question-section">
+                    <textarea id="questionInput" class="question-input" placeholder="Ask a question based on the crawled content..." aria-label="Ask a question"></textarea>
+                    <button onclick="askQuestion()" class="btn btn-primary" id="askBtn">🔍 Get Answer</button>
+                    <div id="answerBox"></div>
+                    <div class="question-history" id="questionHistory">
+                        <h3 style="margin-bottom: 15px;">Question History <button onclick="clearHistory()" class="btn btn-secondary" style="float: right; padding: 8px 16px; font-size: 0.9rem;">Clear History</button></h3>
+                        <div id="historyList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+</html>
